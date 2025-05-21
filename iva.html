@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVA</title>
+</head>
+
+<body>
+    <h1>Calcular precio con el IVA incluido</h1>
+    <p <input type="text" id="articulo" required><label for="articulo">Artículo
+            <select onchange value="mostrarArticulo">
+                <option></option>
+                <option value="mostrarArticulo">Cazadora</option>
+                <option value="mostrarArticulo">Pantalones</option>
+                <option value="mostrarArticulo">Camiseta</option>
+                <option value="mostrarArticulo">Cinturon</option>
+            </select>
+        </label>
+    </p>
+
+    <p <input type="number" id="precio" required><label for="precio">Precio del artículo
+            <select onchange value="mostrarPrecio">
+                <option></option>
+                <option value="mostrarPrecio">100</option>
+                <option value="mostrarPrecio">80</option>
+                <option value="mostrarPrecio">60</option>
+                <option value="mostrarPrecio">40</option>
+            </select>
+        </label>
+    </p>
+
+    <p><label for="iva">IVA</label>
+        <input type="number" id="iva" required>
+    </p>
+
+    <p><button type="button" onclick="calcular()">Calcular Iva</button></p>
+    <p id="calcularIva">Total precio con IVA incluido:</p>
+
+    <script>
+
+        const ARTICULO = document.getElementById("articulo");
+        const PRECIO = document.getElementById("precio");
+        const IVA = document.getElementById("iva");
+        
+        
+        function calcular() {
+            let precio = Number(PRECIO.value);
+            let iva = Number(IVA.value);
+            console.log(precio, iva);
+
+            let total = precio * (iva / 100) + precio;
+            console.log(total);
+
+            document.getElementById("calcularIva").innerHTML = "Este es el precio total del articulo con IVA: " + total;
+
+
+            
+           
+         
+    
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
