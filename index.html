@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso JC</title>
+</head>
+
+<body>
+    <h1>Calcular tiempo en segundos</h1>
+    <p><label for="hora">Indica la hora:</label>
+        <input type="number" id="horas">
+    </p>
+
+    <p><label for="minutos">Indica los minutos:</label>
+        <input type="number" id="minutos">
+    </p>
+
+    <p><label for="segundos">Indica los segundos</label>
+        <input type="number" id="segundos">
+    </p>
+
+    <p><button type="button" onclick="totalSegundos()">Calcular segundos
+        </button>
+    </p>
+    <p id="calcularSegundos">El total de segundos es: </p>
+
+    <script>
+
+        const HORAS = document.getElementById("horas");
+        const MINUTOS = document.getElementById("minutos");
+        const SEGUNDOS = document.getElementById("segundos");
+        const RESULTADO = document.getElementById("calcularSegundos");
+
+
+        function totalSegundos() {
+            console.clear; //limpia consola
+
+            let hores = Number(HORAS.value);
+            let minuts = Number(MINUTOS.value);
+            let segons = Number(SEGUNDOS.value);
+            
+            let total = (hores * 3600) + (minuts * 60) + segons;
+
+            RESULTADO.innerHTML="El total de segundos es: " + total;
+        }
+    </script>
+<ul>
+    <li><cite>Multiplicar</cite>: <a href="tabla.html"><strong>Tablas de multiplicar</strong></a> </li>
+    <li><cite>Calcular</cite> IVA <a  href="iva.html"><strong>Total Iva</strong></a></li>
+    </ul>
+</body>
+
+</html>

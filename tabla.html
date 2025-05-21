@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de multiplicar</title>
+</head>
+
+<body>
+    <h1>Tabla de multiplicar</h1>
+    <label for="numero"></label>
+    <input type="number" id="numero" min="1" max="10">
+
+    <button onclick="mostrarTabla">Mostrar Tabla</button>
+    <select onchange="mostrarTabla()" id="tabla">
+        <option value="mostrarTabla"></option>
+        <option value="mostrarTabla">1</option>
+        <option value="mostrarTabla">2</option>
+        <option value="mostrarTabla">3</option>
+        <option value="mostrarTabla">4</option>
+        <option value="mostrarTabla">5</option>
+        <option value="mostrarTabla">6</option>
+        <option value="mostrarTabla">7</option>
+        <option value="mostrarTabla">8</option>
+        <option value="mostrarTabla">9</option>
+        <option value="mostrarTabla">10</option>
+    </select>
+
+    <script>
+        function mostrarTabla() {
+            const numero = document.getElementById("numero").value;
+            const resultadoDiv = document.getElementById("resultado");
+            alert("Por favor introduzca un número del 1 al 10");
+
+        }
+
+        document.getElementById("mutiplicar").innerHTML = `tablaSeleccionada $(tabla);
+${tabla} x 1 = ${tabla * 1}; 
+${tabla} x 2 = ${tabla * 2}; 
+${tabla} x 3 = ${tabla * 3}; 
+${tabla} x 4 = ${tabla * 4}; 
+${tabla} x 5 = ${tabla * 5}; 
+${tabla} x 6 = ${tabla * 6}; 
+${tabla} x 7 = ${tabla * 1}; 
+${tabla} x 8 = ${tabla * 1}; 
+${tabla} x 9 = ${tabla * 1}; 
+${tabla} x 7 = ${tabla * 1};`
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
