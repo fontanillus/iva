@@ -9,26 +9,32 @@
 
 <body>
     <h1>Calcular precio con el IVA incluido</h1>
-    <p <input type="text" id="articulo" required><label for="articulo">Artículo
-            <select onchange value="mostrarArticulo">
-                <option></option>
-                <option value="mostrarArticulo">Cazadora</option>
-                <option value="mostrarArticulo">Pantalones</option>
-                <option value="mostrarArticulo">Camiseta</option>
-                <option value="mostrarArticulo">Cinturon</option>
+    <p <label for="articulo">Artículo
+            <select id="item" onchange="calcularArticle()">
+                <option value=""></option>
+                <option value="cazadora">Cazadora</option>
+                <option value="pantalones">Pantalones</option>
+                <option value="camiseta">Camiseta</option>
+                <option value="cinturon">Cinturon</option>
             </select>
+            <input type="text" id="articulo" required>
+
         </label>
     </p>
 
-    <p <input type="number" id="precio" required><label for="precio">Precio del artículo
-            <select onchange value="mostrarPrecio">
-                <option></option>
-                <option value="mostrarPrecio">100</option>
-                <option value="mostrarPrecio">80</option>
-                <option value="mostrarPrecio">60</option>
-                <option value="mostrarPrecio">40</option>
+    <p <label for="precio">Precio del artículo</label>
+        <select id="selector" onchange="calcularTotal()">
+                <option value=""></option>
+                <option value="100">100</option>
+                <option value="80">80</option>
+                <option value="70">70</option>
+                <option value="60">60</option>
             </select>
-        </label>
+        <input type="number" id="precio" required hidden>
+
+
+
+
     </p>
 
     <p><label for="iva">IVA</label>
@@ -43,8 +49,19 @@
         const ARTICULO = document.getElementById("articulo");
         const PRECIO = document.getElementById("precio");
         const IVA = document.getElementById("iva");
-        
-        
+
+        function calcularTotal(){
+        let TARIFA = document.getElementById("selector");
+        let PREU = document.getElementById("precio");
+        PREU.value = TARIFA.value;
+        }
+
+        function calcularArticle() {
+        let SAMPLE = document.getElementById("item");
+        let PRODUCT = document.getElementById("articulo");
+        PRODUCT.value = SAMPLE.value;
+        }
+
         function calcular() {
             let precio = Number(PRECIO.value);
             let iva = Number(IVA.value);
@@ -53,13 +70,13 @@
             let total = precio * (iva / 100) + precio;
             console.log(total);
 
-            document.getElementById("calcularIva").innerHTML = "Este es el precio total del articulo con IVA: " + total;
+            document.getElementById("calcular").innerHTML = `Este es el precio total del articulo ${PRODUCT} con el IVA incluido: ` + total;
 
 
-            
-           
-         
-    
+
+
+
+
 
         }
 
